@@ -7,8 +7,8 @@ else
 	CFLAGS	=	--std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME	=	megaphone
-SRC		=	megaphone.cpp
+NAME	=	phoneBook
+SRC		=	.cpp
 OBJ		=	$(SRC:%.cpp=%.o)
 
 %.o	:	%.cpp
