@@ -18,7 +18,7 @@ class Contact {
   std::string phoneNumber_;
   std::string darkestSecret_;
  public:
-  Contact(void);
+  Contact();
   Contact(const std::string &first_name,
           const std::string &last_name,
           const std::string &nick_name,

@@ -8,7 +8,7 @@ else
 endif
 
 NAME	=	phoneBook
-SRC		=	.cpp
+SRC		=	Contact.cpp PhoneBook.cpp main.cpp
 OBJ		=	$(SRC:%.cpp=%.o)
 
 %.o	:	%.cpp
@@ -19,7 +19,7 @@ OBJ		=	$(SRC:%.cpp=%.o)
 $(NAME)	:	$(OBJ)
 	@$(CC) $(CFLAGS) -o $@ $^
 	@echo $(L_CYAN) 🔗 Linking [$(notdir $^)] to [$@] $(RESET)
-	@echo $(BOLD)$(L_PURPLE) ✨$(NAME)✨ $(GREEN)is ready 🎉 $(RESET)
+	@echo $(BOLD)$(L_PURPLE) ✨ $(NAME) ✨ $(GREEN)is ready 🎉 $(RESET)
 
 .PHONY: all
 all: $(NAME)

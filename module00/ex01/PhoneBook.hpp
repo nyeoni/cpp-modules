@@ -10,16 +10,21 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <string>
 
 #define MAX_CONTACT_NUM 8
+#define MAX_COL_WIDTH 10
+#define SUCCESS 0
+#define FAIL -1
 
 class PhoneBook {
   Contact contacts_[MAX_CONTACT_NUM];
+  int index;
  public:
   PhoneBook();
   ~PhoneBook();
-  int addContact(const Contact &newContact);
-  int searchContact(int index);
+  int addContact(void);
+  int searchContact(void);
   int getContact(int index);
 };
 

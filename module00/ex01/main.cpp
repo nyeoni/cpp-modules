@@ -11,8 +11,21 @@
 
 int main() {
   PhoneBook phoneBook;
+  std::string command;
 
-  std::cout << "ADD | SEARCH | EXIT ";
-  std::cout << "$>";
+  while (true) {
+    std::cout << "\033[1;36mSELECT COMMAND ADD | SEARCH | EXIT : \033[0m";
+    std::getline(std::cin, command);
 
+    if (command == "ADD") {
+      phoneBook.addContact();
+    } else if (command == "SEARCH") {
+      phoneBook.searchContact();
+    } else if (command == "EXIT") {
+      break;
+    } else {
+      std::cout << "Error: Wrong Command." << std::endl;
+    }
+  }
+  return 0;
 }
