@@ -40,6 +40,10 @@ int PhoneBook::addContact() {
   std::cout << "darkestSecret : ";
   std::getline(std::cin, darkestSecret);
 
+  if (!firstName[0] || !lastName[0] || !nickName[0] || !phoneNumber[0] || !darkestSecret[0]) {
+    std::cout << "Error: Empty value found.. Please fill all data." << std::endl;
+    return (FAIL);
+  }
   Contact newContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
   contacts_[index] = newContact;
   if (index + 1 == MAX_CONTACT_NUM) index = 0;
