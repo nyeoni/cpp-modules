@@ -15,7 +15,7 @@
 class HumanA {
  private:
   std::string name_;
-  Weapon weapon_;
+  const Weapon &weapon_;
  public:
   HumanA(const std::string &name, const Weapon &weapon);
   ~HumanA();

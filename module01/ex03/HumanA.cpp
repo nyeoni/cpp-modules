@@ -6,8 +6,8 @@
  * Copyright (c) 2022 nkim
  */
 
-#include "HumanA.hpp"
 #include <iostream>
+#include "HumanA.hpp"
 
 HumanA::HumanA(const std::string &name, const Weapon &weapon) : name_(name), weapon_(weapon) {}
 HumanA::~HumanA() {}
