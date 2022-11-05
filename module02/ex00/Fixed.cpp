@@ -12,11 +12,12 @@
 Fixed::Fixed() : num_(0) {
   std::cout << "Default constructor called" << std::endl;
 }
-Fixed::Fixed(const Fixed &copy) : num_(copy.num_) {
+Fixed::Fixed(const Fixed &copy) {
   std::cout << "Copy constructor called" << std::endl;
+  *this = copy;
 }
 
-Fixed &Fixed::operator=(Fixed &src) {
+Fixed &Fixed::operator=(const Fixed &src) {
   std::cout << "Copy assignment operator called" << std::endl;
   this->num_ = src.getRawBits();
   return (*this);
