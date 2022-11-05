@@ -14,10 +14,15 @@
 Fixed::Fixed() : num_(0) {
   std::cout << "Default constructor called" << std::endl;
 }
-Fixed::Fixed(const int num) : num_(num << fBits_) {}
-Fixed::Fixed(const float num) : num_((int) roundf(num * (1 << fBits_))) {}
-Fixed::Fixed(const Fixed &copy) : num_(copy.num_) {
+Fixed::Fixed(const int num) : num_(num << fBits_) {
+  std::cout << "Int constructor called" << std::endl;
+}
+Fixed::Fixed(const float num) : num_((int) roundf(num * (1 << fBits_))) {
+  std::cout << "Float constructor called" << std::endl;
+}
+Fixed::Fixed(const Fixed &copy) {
   std::cout << "Copy constructor called" << std::endl;
+  *this = copy;
 }
 
 // Operator
@@ -29,11 +34,9 @@ Fixed &Fixed::operator=(const Fixed &src) {
 
 // Getter & Setter
 int Fixed::getRawBits(void) const {
-  std::cout << "getRawBits member function called" << std::endl;
   return this->num_;
 }
 void Fixed::setRawBits(const int raw) {
-  std::cout << "getRawBits member function called" << std::endl;
   this->num_ = raw;
 }
 
