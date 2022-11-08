@@ -47,7 +47,7 @@ class ClapTrap {
   void printStatus();
   CT_STATUS checkStatus();
 
-  ~ClapTrap();
+  virtual ~ClapTrap();
 };
 
 #endif //CLAPTRAP_HPP

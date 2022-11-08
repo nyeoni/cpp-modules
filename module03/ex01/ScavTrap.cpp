@@ -46,5 +46,11 @@ void ScavTrap::attack(const std::string &target) {
   ClapTrap::attack(target);
 }
 void ScavTrap::guardGate() {
-  std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+  if (checkStatus() == DEAD) {
+    std::cout << "Guard Fail : ";
+    printStatus();
+    return;
+  }
+  std::cout << "[" << actor_ << "] " << name_
+            << " is now in Gate keeper mode" << std::endl;
 }
