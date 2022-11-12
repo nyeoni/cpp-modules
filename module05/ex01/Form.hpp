@@ -20,7 +20,7 @@ class Form {
   const int executeGrade_;
  public:
   Form();
-  Form(const std::string &name, const int signed_grade, const int execute_grade);
+  Form(const std::string &name, const int signGrade, const int executeGrade);
   Form(const Form &copy);
   ~Form();
 

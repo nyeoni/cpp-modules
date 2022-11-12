@@ -14,8 +14,10 @@
 Form::Form() : name_("untitled"), isSigned_(false), signGrade_(150), executeGrade_(150) {
   std::cout << "Default Constructor of Form called" << std::endl;
 }
-Form::Form(const std::string &name, const int signed_grade, const int execute_grade)
-    : name_(name), isSigned_(false), signGrade_(signed_grade), executeGrade_(execute_grade) {
+Form::Form(const std::string &name, const int signGrade, const int executeGrade)
+    : name_(name), isSigned_(false), signGrade_(signGrade), executeGrade_(executeGrade) {
+  if (signGrade_ < 1 || executeGrade_ < 1) throw GradeTooHighException();
+  if (signGrade_ > 150 || executeGrade_ > 150) throw GradeTooLowException();
   std::cout << "Constructor of Form(name, signedGrade, executeGrade) called" << std::endl;
 }
 Form::Form(const Form &copy)
