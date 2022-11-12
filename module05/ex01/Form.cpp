@@ -35,7 +35,7 @@ std::ostream &operator<<(std::ostream &os, const Form &form) {
   os << "Form (name: " << form.getName()
      << ", isSigned: " << (form.IsSigned() ? "true" : "false")
      << ", signGrade: " << form.getSignGrade()
-     << ", executeGrade: " << form.getExecuteGrade();
+     << ", executeGrade: " << form.getExecuteGrade() << ")";
   return (os);
 }
 
