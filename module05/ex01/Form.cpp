@@ -31,6 +31,7 @@ Form::~Form() {
 // Operator Overload
 Form &Form::operator=(const Form &src) {
   this->isSigned_ = src.isSigned_;
+  std::cout << "Assignment Operator of Form called" << std::endl;
   return (*this);
 }
 std::ostream &operator<<(std::ostream &os, const Form &form) {

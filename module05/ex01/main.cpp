@@ -25,7 +25,8 @@ int main(void) {
     Form form1("importantForm", 2, 1);
     Form form2;
     Form form3(form1);
-    Form form4 = form2;
+    Form form4;
+    form4 = form2;
 
     std::cout << form1 << std::endl;
     std::cout << form2 << std::endl;
