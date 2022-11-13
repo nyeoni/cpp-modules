@@ -19,7 +19,8 @@ int main(void) {
     Bureaucrat a;
     Bureaucrat b("nkim", 1);
     Bureaucrat c(b);
-    Bureaucrat d = a;
+    Bureaucrat d;
+    d = a;
 
     std::cout << L_GREEN << "==============Check Instance a, b, c, d==============" << RESET << std::endl;
     std::cout << a << std::endl;

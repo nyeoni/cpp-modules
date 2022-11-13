@@ -29,6 +29,7 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src) {
   // const name can't change
   this->grade_ = src.getGrade();
+  std::cout << "Assignment Operator of Bureaucrat called" << std::endl; 
   return (*this);
 }
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
