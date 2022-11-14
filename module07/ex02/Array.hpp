@@ -41,20 +41,15 @@ Array<T>::Array() : elements_(NULL), n_(0) {}
 
 template<typename T>
 Array<T>::Array(const unsigned int n) : n_(n) {
-  std::cout << "n: " << n_ << std::endl;
-  elements_ = new T(n_);
-//  for (int i = 0; i < n_; i++) {
-//    elements_[i] = 0;
-//  }
+  elements_ = new T[n_];
+  memset(elements_, 0, n_ * sizeof(T));
 }
 
 template<typename T>
 Array<T>::Array(const Array<T> &copy) : elements_(NULL) {
   this->n_ = copy.n_;
-  this->elements_ = new T(n_);
-//  for (int i = 0; i < n_; i++) {
-//    elements_[i] = 0;
-//  }
+  this->elements_ = new T[n_];
+  memset(elements_, 0, n_ * sizeof(T));
 }
 
 template<typename T>
@@ -70,17 +65,15 @@ Array<T> &Array<T>::operator=(const Array<T> &src) {
     this->elements_ = NULL;
   }
   this->n_ = src.n_;
-  this->elements_ = new T(n_);
-//  for (int i = 0; i < n_; i++) {
-//    elements_[i] = 0;
-//  }
+  this->elements_ = new T[n_];
+  memset(elements_, 0, n_ * sizeof(T));
 
   return (*this);
 }
 
 template<typename T>
 T &Array<T>::operator[](unsigned int i) {
-  if (i < 0 || i > n_)
+  if (i < 0 || i >= n_)
     throw IndexOutOfBound();
   return elements_[i];
 }
